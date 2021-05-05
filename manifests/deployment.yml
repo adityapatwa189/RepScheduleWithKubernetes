@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "schedulecluster-4cfe"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "schedulecluster-4cfe"
+  template:
+    metadata:
+      labels:
+        app: "schedulecluster-4cfe"
+    spec:
+      containers:
+        - name: "schedulecluster-4cfe"
+          image: "scheduleregistry.azurecr.io/schedulecluster"
+          ports:
+          - containerPort: 80
