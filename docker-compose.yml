@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  medicinerepresentativeschedule:
+    image: ${DOCKER_REGISTRY-}medicinerepresentativeschedule
+    build:
+      context: .
+      dockerfile: MedicineRepresentativeSchedule/Dockerfile
