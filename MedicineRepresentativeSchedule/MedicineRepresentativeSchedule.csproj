@@ -18,4 +18,10 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="deployfile.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
