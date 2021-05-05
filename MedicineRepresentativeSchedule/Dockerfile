@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["MedicineRepresentativeSchedule/MedicineRepresentativeSchedule.csproj", "MedicineRepresentativeSchedule/"]
-RUN dotnet restore "MedicineRepresentativeSchedule/MedicineRepresentativeSchedule.csproj"
+COPY ["MedicineRepresentativeSchedule.csproj", ""]
+RUN dotnet restore "./MedicineRepresentativeSchedule.csproj"
 COPY . .
-WORKDIR "/src/MedicineRepresentativeSchedule"
+WORKDIR "/src/."
 RUN dotnet build "MedicineRepresentativeSchedule.csproj" -c Release -o /app/build
 
 FROM build AS publish
